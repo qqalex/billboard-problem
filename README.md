@@ -1,4 +1,4 @@
-# google_billboard_problem
+# Google Billboard Problem
 ![google](https://github.com/user-attachments/assets/3dc0c759-12ed-4f87-8f83-2e3f5539d60b)
 
 Google billboard problem from 2004
