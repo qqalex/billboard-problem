@@ -10,11 +10,12 @@
 
 // Sieve of Eratosthenes
 template <typename T>
-inline auto isPrime(T n) -> decltype(n) {
+inline auto isPrime(T n) -> unsigned long long
+{
   if (1 >= n)
     return false;
   if (3 >= n)
-    return n;
+    return true;
   if (0 == n % 2 || 0 == n % 3)
     return false;
   
@@ -24,11 +25,11 @@ inline auto isPrime(T n) -> decltype(n) {
       if (n%i == 0 || n%(i+2) == 0)
         return false;
 
-  return n;
+  return true;
 }
 
 // Function overload for strings
-inline auto isPrime(std::string n) -> unsigned long long {
+inline auto isPrime(std::string n) -> int {
   if ( std::string::npos != n.find('-') )
     return false; // Negative numbers aren't prime
   
@@ -63,9 +64,9 @@ auto main(void) -> int {
 
   // Iterate through e while checking each substr of prime_length.
   for (size_t i=0; i<e.length()-prime_length; ++i) {
-    if ( isPrime(stoull(e.substr(i, prime_length))) ) {
+    if ( isPrime(e.substr(i, prime_length)) ) {
       std::cout << "Found first " << prime_length <<  " digit consecutive prime in e.\n"
-                << stoull(e.substr(i, prime_length)) << ".com\n";
+                << e.substr(i, prime_length) << ".com\n";
       break;
     }
   }
