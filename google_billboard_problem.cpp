@@ -20,7 +20,7 @@ inline auto isPrime(T n) -> decltype(n) {
     return false;
   
   // Already checked if evenly divisible by 2, 3, 4
-  // Checks if evenly divisble by 5, 7, 13, 15, 21, 23, ... , n
+  // Checks if evenly divisble by 5, 7, 13, 15, 21, 23, ... , sqrt(n)
   for (size_t i=5; i*i<=sqrt(n); i+=6)
       if (n%i == 0 || n%(i+2) == 0)
         return false;
